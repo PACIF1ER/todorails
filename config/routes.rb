@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  resources :lists do
-  	member do 
-  		patch :complete
-  	end
-  end
-  
-root 'lists#index'
+  resources :tasks
+  root 'tasks#index'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
