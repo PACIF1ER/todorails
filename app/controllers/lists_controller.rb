@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_list, only: [:show, :edit, :update, :destroy, :complete]
 
   # GET /lists
   # GET /lists.json
@@ -17,6 +17,10 @@ class ListsController < ApplicationController
     @list = List.new
   end
 
+  def complete
+   @list.update_attribute(:completed_at, Time.now) 
+    redirect_to @lists, notice: "Todo completed"
+  end
   # GET /lists/1/edit
   def edit
   end

@@ -9,7 +9,8 @@
   <strong>Description:</strong>
   <%= @list.description %>
 </p>
-
-
+<p>
+<%= link_to 'Mark as Complete', complete_list_path(@list), method: :patch%>
+</p>
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
