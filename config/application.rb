@@ -14,11 +14,11 @@ module New
     config.action_mailer.default_url_options = { host: 'mysterious-cove-69166.herokuapp.com', :protocol => 'https' }
     ActionMailer::Base.smtp_settings = {
  	:address 			=> 'smtp.gmail.com',
- 	:domain  			=> 'gmail.com',
+ 	:domain  			=> 'heroku.com',
  	:port    			=>  587,
  	:user_name 			=> "bydlovasya1488@gmail.com",
  	:password   		=> "allahuakbar1998",
- 	:authentication		=> 'login',
+ 	:authentication		=> "plain",
  	:enable_starttls_auto => true
 
 
