@@ -75,7 +75,20 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+config.action_mailer.raise_delivery_errors = false
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.perform_deliveries = true
 
+config.action_mailer.default_url_options = { host: 'fast-sands-25972.herokuapp.com', :protocol => 'https' }
+    ActionMailer::Base.smtp_settings = {
+  :address      => 'smtp.gmail.com',
+  :domain       => 'gmail.com',
+  :port         =>  587,
+  :user_name      => "bydlovasya1488@gmail.com",
+  :password       => "allahuakbar1998",
+  :authentication   => 'plain',
+  :enable_starttls_auto => true
+    }
 
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
