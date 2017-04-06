@@ -5,12 +5,14 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    @task = current_user.tasks.find_by_id params[:id]
+
   end
 
   # GET /tasks/new
@@ -25,7 +27,7 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.build(task_params)
 
     respond_to do |format|
       if @task.save
@@ -70,6 +72,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :status, :duedate, :description)
+      params.require(:task).permit(:name, :status, :duedate, :description, :user_id)
     end
 end
