@@ -53,7 +53,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   #Heroku
   config.action_mailer.default_url_options = { host: 'mysterious-cove-69166.herokuapp.com', :protocol => 'https' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.perform_deliveries = true
+ 
 end
