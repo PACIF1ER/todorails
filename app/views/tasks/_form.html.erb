@@ -26,7 +26,19 @@
   <div class="form-group">
     <%= f.label :duedate, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.datetime_select :duedate, :class => 'form-control' %>
+      <%= f.text_field :duedate, :class => 'datepicker' %>
+    <script type="text/javascript">
+  $(document).ready(function(){
+    var date = new Date();
+        var currentMonth = date.getMonth();
+        var currentDate = date.getDate();
+        var currentYear = date.getFullYear();
+    $('.datepicker').datepicker({
+     locale: 'en',
+            minDate: new Date(currentYear, currentMonth, currentDate) 
+    });
+  });
+    </script>
     </div>
   </div>
 
