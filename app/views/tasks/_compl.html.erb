@@ -6,6 +6,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Check</th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:duedate) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
@@ -16,7 +17,7 @@
 <tbody>
     <%  @tasks_completed.each do |task| %>
       <tr>
-        <td><%= check_box_tag 'tasks_ids[]', task.id, false %></td>
+        <td><%= check_box_tag 'tasks_id[]', task.id, false %></td>
         <td><%= task.name %></td>
         <td ><%= task.duedate %></td>
         <td><%= task.description %></td>

@@ -67,13 +67,13 @@ end
   end
 
   def destroy_multiple 
-    @tasks = current_user.tasks.where(id: params[:tasks_ids]).destroy_all 
+    @tasks = current_user.tasks.where(id: params[:tasks_id]).destroy_all 
     redirect_to tasks_path
   end
 
    def complete
     Task.update_all({completed: true})
-    @task = Task.find(params[:id], {id: params[:tasks_ids]})
+    @task = Task.find(params[:id])
 
     @task.update_attributes(completed: true) 
     redirect_to tasks_path
