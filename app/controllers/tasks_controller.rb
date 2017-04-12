@@ -1,13 +1,15 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  helper_method :sort_column, :sort_direction
 
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = current_user.tasks
-  end
+   @tasks = current_user.tasks.order(sort_column + ' ' + sort_direction).where(completed: nil) 
 
+    @tasks_completed = current_user.tasks.order(sort_column + ' ' + sort_direction).where(completed: true)
+end
   # GET /tasks/1
   # GET /tasks/1.json
   def show
@@ -64,6 +66,27 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy_multiple 
+    @tasks = current_user.tasks.where(id: params[:tasks_ids]).destroy_all 
+    redirect_to tasks_path
+  end
+
+   def complete
+    Task.update_all({completed: true})
+    @task = Task.find(params[:id], {id: params[:tasks_ids]})
+
+    @task.update_attributes(completed: true) 
+    redirect_to tasks_path
+  end
+
+ def sort_column
+    params[:sort] || "name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
@@ -72,6 +95,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :status, :duedate, :description, :user_id)
+      params.require(:task).permit(:name, :duedate, :completed,  :description, :user_id)
     end
 end
