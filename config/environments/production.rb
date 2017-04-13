@@ -79,7 +79,7 @@ Rails.application.configure do
  config.action_mailer.raise_delivery_errors = false
  config.action_mailer.delivery_method = :smtp
  config.action_mailer.perform_deliveries = true
- config.action_mailer.default_url_options = { host: 'fast-sands-25972.herokuapp.com', :protocol => 'https' }
+ config.action_mailer.default_url_options = { host: 'afternoon-caverns-21271.herokuapp.com', :protocol => 'https' }
     ActionMailer::Base.smtp_settings = {
   :address      => 'smtp.gmail.com',
   :domain       => 'gmail.com',
