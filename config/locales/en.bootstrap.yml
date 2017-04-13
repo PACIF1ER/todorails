@@ -8,8 +8,10 @@ en:
     pages:
       pages: "Pages"
   helpers:
+    complete: "Complete"
     actions: "Actions"
     links:
+      complete: "Complete"
       back: "Back"
       cancel: "Cancel"
       confirm: "Are you sure?"

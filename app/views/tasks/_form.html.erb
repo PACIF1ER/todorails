@@ -25,11 +25,11 @@
     <%= f.label :duedate, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :duedate, :class => 'datepicker' %>
-      <script type="text/javascript">
+<script type="text/javascript">
   $(document).ready(function(){
     $('.datepicker').datepicker();
   });
-</script>
+</script>     
     </div>
   </div>
 
@@ -44,10 +44,11 @@
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit "Save", :class => 'btn btn-primary' %>
+      <%= f.submit :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 tasks_path, :class => 'btn btn-default' %>
-    </div>
-  </div>
-
+    
 <% end %>
+    </div>
+
+  </div>

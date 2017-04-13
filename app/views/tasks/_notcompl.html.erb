@@ -7,10 +7,10 @@
   <thead>
     <tr>
       <th>Check</th>  
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:duedate) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>Name</th>
+      <th>Duedate</th>
+      <th>Description</th>
+      <th>Created at</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -23,7 +23,7 @@
         <td><%= task.description %></td>
         <td><%=l task.created_at %></td>
         <td>
-          <%= link_to t('.complete', :default => t("helpers.links.complete")), complete_task_path(task), :class => 'btn btn-success btn-xs' %>
+          <%= link_to 'Complete' , complete_task_path(task), :class => 'btn btn-success btn-xs' %>
 
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       task_path(task), :class => 'btn btn-default btn-xs' %>

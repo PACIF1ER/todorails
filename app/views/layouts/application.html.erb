@@ -15,13 +15,14 @@
     </head>
     <body>
     <% if user_signed_in? %>
-   <%= current_user.name %> - <%= link_to "Sign out", destroy_user_session_path, :method => 'delete', class: "btn btn-primary" %>
+   <p align="right"><%= current_user.name %> <%= link_to "Sign out", destroy_user_session_path, :method => 'delete', class: "btn btn-primary" %>
+     </p>
+    <p align="left"> <%= link_to 'New task' , new_task_path, :class => 'btn btn-info' %></p>      
    <% end %> 
         <div class="container">
           <%= render partial: 'shared/flash' unless flash.empty? %>
-          <%= yield %>
         </div>
-
+      <%= yield %>
     </body>
 </html>
 

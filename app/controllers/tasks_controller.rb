@@ -33,8 +33,9 @@ end
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
-        format.json { render :show, status: :created, location: @task }
+        format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
+        format.json {render inline: "location.reload();" }
+        format.json { render :show, status: :created, location: tasks_path }
       else
         format.html { render :new }
         format.json { render json: @task.errors, status: :unprocessable_entity }
@@ -72,7 +73,6 @@ end
   end
 
    def complete
-    Task.update_all({completed: true})
     @task = Task.find(params[:id])
 
     @task.update_attributes(completed: true) 
@@ -84,7 +84,7 @@ end
   end
 
   def sort_direction
-    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+    params[:direction] || "asc"
   end
 
   private
@@ -95,6 +95,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :duedate, :completed,  :description, :user_id)
+      params.require(:task).permit(:name, :duedate, :completed,  :description)
     end
 end

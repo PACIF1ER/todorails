@@ -7,17 +7,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # POST /resource
-   def create
-     respond_to do |format|
-      if resource_name
-        format.html { redirect_to new_user_session_path, notice: 'Confirmation has been sent, check your email for instructions.' }
-
-      else
-        format.html { render :new }
-      end
-    end
-   end
 
   # GET /resource/edit
   # def edit

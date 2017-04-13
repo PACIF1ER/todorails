@@ -7,7 +7,7 @@ RSpec.describe Task, type: :model do
   it 'Sample Maple' do
     expect(@task.title).to eq("Sample text")
   end
-    it 'validations' do
+    it 'Validations' do
      task = FactoryGirl.create(:task)
      task.title.should == "Text Sample"
  end
