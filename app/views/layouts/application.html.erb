@@ -15,7 +15,7 @@
     </head>
     <body>
     <% if user_signed_in? %>
-   <%= current_user.name %> - <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete', class: "btn btn-primary" %>
+   <%= current_user.name %> - <%= link_to "Sign out", destroy_user_session_path, :method => 'delete', class: "btn btn-primary" %>
    <% end %> 
         <div class="container">
           <%= render partial: 'shared/flash' unless flash.empty? %>

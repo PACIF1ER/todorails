@@ -24,7 +24,12 @@
   <div class="form-group">
     <%= f.label :duedate, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.datetime_select :duedate, :class => 'form-control' %>
+      <%= f.text_field :duedate, :class => 'datepicker' %>
+      <script type="text/javascript">
+  $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+</script>
     </div>
   </div>
 
