@@ -88,7 +88,7 @@ Rails.application.configure do
   :password       => "allahuakbar98",
   :authentication   => 'plain',
   :enable_starttls_auto => true
-   # }
+    }
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
