@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>New</title>
-    <%= csrf_meta_tags %>
+<html lang="en">
+    <head>
+      <!-- Required meta tags always come first -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      <title>Skeleton</title>
 
-  <body>
-  <% if user_signed_in? %>
-  <p> <%= current_user.name %> - <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete' %> </p>
-  <br>
-  <% end %>
-    <%= yield %>
-  </body>
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+
+    </head>
+    <body>
+    <% if user_signed_in? %>
+   <%= current_user.name %> - <%= link_to "Sign_out", destroy_user_session_path, :method => 'delete', class: "btn btn-primary" %>
+   <% end %> 
+        <div class="container">
+          <%= render partial: 'shared/flash' unless flash.empty? %>
+          <%= yield %>
+        </div>
+
+    </body>
 </html>
+
