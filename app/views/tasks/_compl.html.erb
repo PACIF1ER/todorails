@@ -20,9 +20,9 @@
                 <td><%= check_box_tag 'tasks_id[]', task.id, false %></td>
                 <td><%= task.name %></td>
                 <td ><%= task.duedate %></td>
-                <td>Priority</td>
+                <td><%= task.status %></td>
                 <td>
-                    <%= link_to 'Uncomplete' , active_again_task_path(task), :class => 'btn btn-danger btn-xs' %>
+                    <%= link_to 'Uncomplete' , uncomplete_task_path(task), :class => 'btn btn-danger btn-xs' %>
                     <%= link_to t('.show', :default => t("helpers.links.show")),
                       task_path(task), :class => 'btn btn-default btn-xs' %>
                     <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

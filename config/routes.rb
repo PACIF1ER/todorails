@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :tasks do
     member do
       get 'complete'
-      get 'active_again'
+      get 'uncomplete'
     end
 
   	collection do

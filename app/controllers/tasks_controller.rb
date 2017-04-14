@@ -81,11 +81,13 @@ class TasksController < ApplicationController
       end 
    end
 
-   def active_again
+   def uncomplete
     @task = Task.find(params[:id])
     @task.update_attributes(completed: nil) 
-    redirect_to tasks_path
-      
+          respond_to do |format|
+      format.html { redirect_to tasks_url, notice: 'Task was completed.' }
+      format.json { head :no_content } 
+      end 
    end
 
   def sort_column
