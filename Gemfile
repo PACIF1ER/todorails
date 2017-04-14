@@ -7,14 +7,15 @@ end
 
 
 gem 'rails', '~> 5.0.2'
-gem 'bootstrap-datepicker-rails'
 
+gem 'bootstrap-datepicker-rails'
 gem 'momentjs-rails'
 gem 'devise-bootstrap-views'
 gem 'twitter-bootstrap-rails'
 gem 'puma', '~> 3.0'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'font-awesome-rails'
 gem 'bootstrap-sass'
 gem 'sass-rails'
 gem 'devise'

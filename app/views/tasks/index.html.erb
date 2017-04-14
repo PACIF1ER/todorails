@@ -1,10 +1,6 @@
-
  <%= form_tag destroy_multiple_tasks_path do %>
-
-
- <%= render partial: 'notcompl' %>
-
- <%= render partial: 'compl' %>
- <%= render partial: 'buttons' %>
-
+ 	<%= render 'buttons' %>
+ 	<%= render partial: 'notcompl' %>
+ 	<%= render partial: 'compl' %>
+ 	
  <% end %>

@@ -9,11 +9,11 @@ class TasksController < ApplicationController
    @tasks = current_user.tasks.order(sort_column + ' ' + sort_direction).where(completed: nil) 
 
     @tasks_completed = current_user.tasks.order(sort_column + ' ' + sort_direction).where(completed: true)
-end
+  end
   # GET /tasks/1
   # GET /tasks/1.json
   def show
-    @task = current_user.tasks.find_by_id params[:id]
+   @task = current_user.tasks.find params[:id] 
 
   end
 
@@ -67,24 +67,33 @@ end
     end
   end
 
-  def destroy_multiple 
-    @tasks = current_user.tasks.where(id: params[:tasks_id]).destroy_all 
-    redirect_to tasks_path
-  end
+    def destroy_multiple 
+      @tasks = current_user.tasks.where(id: params[:tasks_id]).destroy_all 
+      redirect_to tasks_path
+    end
 
    def complete
     @task = Task.find(params[:id])
-
     @task.update_attributes(completed: true) 
-    redirect_to tasks_path
-  end
+          respond_to do |format|
+      format.html { redirect_to tasks_url, notice: 'Task was completed.' }
+      format.json { head :no_content } 
+      end 
+   end
 
- def sort_column
-    params[:sort] || "name"
+   def active_again
+    @task = Task.find(params[:id])
+    @task.update_attributes(completed: nil) 
+    redirect_to tasks_path
+      
+   end
+
+  def sort_column
+    Task.column_names.include?(params[:sort]) ? params[:sort] : "name"
   end
 
   def sort_direction
-    params[:direction] || "asc"
+    %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
   end
 
   private
@@ -95,6 +104,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :duedate, :completed,  :description)
+      params.require(:task).permit(:name, :status, :duedate, :completed,  :description, :status)
     end
 end

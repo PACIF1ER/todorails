@@ -1,0 +1,14 @@
+ <div class="menu col-md-offset-15 fixedpos">
+    <div class="navbar-header">
+      <a>Taskapp</a>
+    </div>
+     <div class="container-fluid">
+      <div>
+      <ul class="nav navbar-nav navbar-right col-xs-5 ">
+        <li class="fonts1" ><%= current_user.name %></li>
+        <li class: " btn btn-primary " ><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

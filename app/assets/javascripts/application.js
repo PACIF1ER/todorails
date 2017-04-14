@@ -13,9 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require bootstrap
+//= require bootstrap-datepicker
 //= require turbolinks
 //= require_tree .
-//= require bootstrap-datepicker
+//= require moment
+
+
 $(document).on("turbolinks:load", function(){ 
 
   $(".check_all").click(function(){
