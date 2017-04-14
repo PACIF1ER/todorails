@@ -12,15 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/widgets/datepicker
 //= require twitter/bootstrap
 //= require bootstrap
-//= require bootstrap-datepicker
 //= require turbolinks
 //= require_tree .
 //= require moment
 
-
+jQuery ->
+$('#task_duedate').datepicker()
 $(document).on("turbolinks:load", function(){ 
+  $('.datepicker').datepicker();
+});
 
   $(".check_all").click(function(){
     var form = $(this).parents('form')

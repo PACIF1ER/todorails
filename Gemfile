@@ -8,7 +8,6 @@ end
 
 gem 'rails', '~> 5.0.2'
 
-gem 'bootstrap-datepicker-rails'
 gem 'momentjs-rails'
 gem 'devise-bootstrap-views'
 gem 'twitter-bootstrap-rails'
@@ -22,9 +21,13 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'coffee-rails', '~> 4.2'
 
+
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-ui-rails'
+
+
 group :production do
   gem 'pg', '0.18.4'
   gem 'rails_12factor'
