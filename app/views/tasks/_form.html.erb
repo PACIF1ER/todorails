@@ -11,6 +11,8 @@
       </ul>
     </div>
   <% end %>
+<div class="panel-body">
+      <div class="panel-heading">
 
 <div class="col-md-offset-2">
   <div class="form-group col-md-7 ">
@@ -34,11 +36,9 @@
      <%= f.text_field :duedate, :required =>true, :value => Date.today, :min => Date.today, :class => 'datepicker' %>
      <script type="text/javascript">
        $(function() {
-  $('.selector').datepicker({
+  $('.datepicker').datepicker({
       
-      dateFormat: 'yy-mm-dd',
-      minDate: new Date(2016, 10 - 1, 25)
-
+      dateFormat: 'yy-mm-dd'
   });
 });
      </script>
@@ -53,6 +53,8 @@
     <%=f.error_span(:description) %>
   </div>
   </div>
+</div>
+</div>
 </div>
 </div>
   <div class="col-md-offset-1 ">
