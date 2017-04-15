@@ -76,7 +76,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.update_attributes(completed: true) 
           respond_to do |format|
-      format.html { redirect_to tasks_url, notice: 'Task was completed.' }
+      format.html { redirect_to tasks_url, notice: 'Task was Completed.' }
       format.json { head :no_content } 
       end 
    end
@@ -85,7 +85,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.update_attributes(completed: nil) 
           respond_to do |format|
-      format.html { redirect_to tasks_url, notice: 'Task was completed.' }
+      format.html { redirect_to tasks_url, notice: 'Task was Uncompleted.' }
       format.json { head :no_content } 
       end 
    end
