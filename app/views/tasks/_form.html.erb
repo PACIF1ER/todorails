@@ -34,8 +34,10 @@
      <%= f.text_field :duedate, :required =>true, :value => Date.today, :min => Date.today, :class => 'datepicker' %>
      <script type="text/javascript">
        $(function() {
-  $('.datepicker').datepicker({
-      dateFormat: 'yy-mm-dd' 
+  $('.selector').datepicker({
+      
+      dateFormat: 'yy-mm-dd',
+      minDate: new Date(2016, 10 - 1, 25)
 
   });
 });

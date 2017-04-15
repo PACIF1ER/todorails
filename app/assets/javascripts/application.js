@@ -19,7 +19,7 @@
 //= require_tree .
 //= require moment
 
-
+$(document).on("turbolinks:load", function(){
 
   $(".check_all").click(function(){
     var form = $(this).parents('form')
@@ -59,4 +59,4 @@
     }  
   });
 
- 
+ });
