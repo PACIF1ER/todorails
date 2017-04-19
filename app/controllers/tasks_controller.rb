@@ -93,7 +93,7 @@ class TasksController < ApplicationController
   def sort_column
     Task.column_names.include?(params[:sort]) ? params[:sort] : "name"
     Task.column_names.include?(params[:sort]) ? params[:sort] : "priority"
-
+    Task.column_names.include?(params[:sort]) ? params[:sort] : "duedate"
   end
 
   def sort_direction

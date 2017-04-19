@@ -1,5 +1,4 @@
 <%- model_class = Task -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
-</div>
+  <h1 class="col-xs-offset-4 tablefix" >Edit task</h1>
+
 <%= render :partial => 'form' %>
