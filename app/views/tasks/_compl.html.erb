@@ -24,7 +24,7 @@
                 <td ><%= task.duedate %></td>
                 <td><%= task.priority %></td>
                 <td>
-                    <%= link_to '' , uncomplete_task_path(task), :class => 'fa fa-refresh fa-2x'. :title => 'Make active again' %>
+                    <%= link_to '' , uncomplete_task_path(task), :class => 'fa fa-refresh fa-2x', :title => 'Make active again' %>
                     <%= link_to "", task_path(task), :class => 'fa fa-eye fa-2x', :title => 'Show task' %>
                     <%= link_to '',
                       task_path(task),
