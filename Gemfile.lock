@@ -75,6 +75,9 @@ GEM
       railties (>= 3.2, < 5.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    glyphicons-rails (0.1.2)
+      sass (~> 3.3)
+      sass-rails
     i18n (0.8.1)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
@@ -226,6 +229,7 @@ DEPENDENCIES
   devise-i18n
   factory_girl
   font-awesome-rails
+  glyphicons-rails
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails

@@ -92,6 +92,8 @@ class TasksController < ApplicationController
 
   def sort_column
     Task.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    Task.column_names.include?(params[:sort]) ? params[:sort] : "priority"
+
   end
 
   def sort_direction
@@ -106,6 +108,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :status, :duedate, :completed,  :description, :status)
+      params.require(:task).permit(:name, :priority, :duedate, :completed,  :description, :status)
     end
 end

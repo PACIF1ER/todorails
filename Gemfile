@@ -20,7 +20,7 @@ gem 'sass-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'coffee-rails', '~> 4.2'
-
+gem 'glyphicons-rails'
 
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'

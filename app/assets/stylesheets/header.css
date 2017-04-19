@@ -1,6 +1,6 @@
 .menu
 {
-background-color: #61dd52;
+background-color: #00547E;
 border-bottom: 4px solid #04A3ED;
 width:100%;
 height: auto;
@@ -8,15 +8,14 @@ padding: 0 10px;
 margin: 0px;
 z-index: 1;
 opacity: 0.9;
-top:0;
 }
-
 .menu  .navbar-nav > .active > a
 {
 background-color : #04A3ED;
 color: white;
 font-weight: bold;
 }
+
 
 .menu  .navbar-nav >  li >  a
 {
@@ -33,18 +32,21 @@ background-color: #04A3ED;
 .navbar-header 
 {
 font-family: 'Ubuntu Condensed', sans-serif;
-padding-top: 1px;
-margin: 10px;
-text-decoration: none;
+padding: 0px;
+margin: 0px;
 color: white;
 font-size: 25px;
-
+padding: 5px 30px;
 }
 .navbar-header > a:hover
 {
 text-decoration: none;
 color: #04A3ED;
 }
+.navbar-header > a{
+	color:white;
+}
+
 .fonts1
 {
 	font-family: 'Ubuntu';
@@ -54,21 +56,8 @@ color: #04A3ED;
 	font-weight: 500;
 	line-height: 15.4px;
 	padding-top: 13px; 
+	color: white;
 }
 .tablefix{
 	margin-top: 100px;
-}
-.custab{
-    border: 1px solid #ccc;
-    padding: 5px;
-    margin: 2% 0;
-    box-shadow: 3px 3px 2px #ccc;
-    transition: 0.5s;
-    }
-.custab:hover{
-    box-shadow: 3px 3px 0px transparent;
-    transition: 0.5s;
-    }
-.fixedpos{
-	position: fixed;
 }
