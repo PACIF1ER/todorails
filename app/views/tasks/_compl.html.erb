@@ -14,16 +14,16 @@
             <th><%=sortable "name"%></th>
             <th><%=sortable "duedate"%></th>
             <th><%=sortable "priority"%></th>
-            <th class="text-center">Action</th>
         </tr>
     </thead>
           <%  @tasks_completed.each do |task| %>
-            <tr>
+            <tr id="parent">
                 <td><%= check_box_tag 'tasks_id[]', task.id, true %></td>
                 <td><%= task.name %></td>
                 <td ><%= task.duedate %></td>
                 <td><%= task.priority %></td>
                 <td>
+                <div id="hover-content" class="col-md-12">
                     <%= link_to '' , uncomplete_task_path(task), :class => 'fa fa-refresh fa-2x', :title => 'Make active again' %>
                     <%= link_to "", task_path(task), :class => 'fa fa-eye fa-2x', :title => 'Show task' %>
                     <%= link_to '',
@@ -31,6 +31,7 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'fa fa-trash fa-2x', :title => 'Delete task' %>
+                </div>
                 </td>
             </tr>
 

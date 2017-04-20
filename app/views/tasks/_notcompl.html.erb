@@ -14,18 +14,19 @@
             <th><%=sortable "name"%></th>
             <th><%=sortable "duedate"%></th>
             <th><%=sortable "priority"%></th>
-            <th class="text-center">Action</th>
         </tr>
     </thead>
           <%  @tasks.each do |task| %>
-            <tr>
+
+            <tr id="parent">
+
                 <td><%= check_box_tag 'tasks_id[]', task.id, nil %></td>
                 <td><%= task.name %></td>
                 <td ><%= task.duedate %></td>
                 <td><%= task.priority %></td>
                 <td>
-                <div class="col-offset-4">
-                    <%= link_to "",  complete_task_path(task), :class => 'fa fa-check fa-2x', :title => 'Complete task' %>
+                  <div id="hover-content" class="col-md-12">
+                    <%= link_to "",  complete_task_path(task), :class => 'fa fa-check fa-2x ', :title => 'Complete task' %>
                     
                     <%= link_to "", task_path(task), :class => 'fa fa-eye fa-2x', :title => 'Show task' %>
                     <%= link_to "", edit_task_path(task), :class => 'fa fa-pencil-square-o fa-2x', :title => 'Edit task' %>
@@ -33,7 +34,7 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'fa fa-trash fa-2x', :title => 'Delete task' %>
-                      </div>
+                  </div> 
                 </td>
       </tr>
 
