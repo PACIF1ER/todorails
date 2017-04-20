@@ -13,7 +13,7 @@ module New
     # -- all .rb files in that directory are automatically loaded.
   config.i18n.default_locale = :en
    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-    ActionMailer::Base.smtp_settings = {
+ActionMailer::Base.smtp_settings = {
   :address              => 'smtp.gmail.com',
   :domain               => 'gmail.com',
   :port                 =>  587,
@@ -21,7 +21,7 @@ module New
   :password             => "allahuakbar98",
   :authentication       => 'plain',
   :enable_starttls_auto => true
-    }
+}
 
   end
 end
