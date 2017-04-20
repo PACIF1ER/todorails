@@ -77,16 +77,16 @@ Rails.application.configure do
 
 
  config.action_mailer.raise_delivery_errors = false
- config.action_mailer.delivery_method = :smtp
- config.action_mailer.perform_deliveries = true
- config.action_mailer.default_url_options = { host: 'afternoon-caverns-21271.herokuapp.com', :protocol => 'https' }
-    ActionMailer::Base.smtp_settings = {
-  :address      => 'smtp.gmail.com',
-  :domain       => 'gmail.com',
-  :port         =>  587,
-  :user_name      => "mailertodoapp@gmail.com",
-  :password       => "allahuakbar98",
-  :authentication   => 'plain',
+ config.action_mailer.delivery_method       = :smtp
+ config.action_mailer.perform_deliveries    = true
+ config.action_mailer.default_url_options   = { host: 'afternoon-caverns-21271.herokuapp.com', :protocol => 'https' }
+    ActionMailer::Base.smtp_settings        = {
+  :address              => 'smtp.gmail.com',
+  :domain               => 'gmail.com',
+  :port                 =>  587,
+  :user_name            => "mailertodoapp@gmail.com",
+  :password             => "allahuakbar98",
+  :authentication       => 'plain',
   :enable_starttls_auto => true
     }
 

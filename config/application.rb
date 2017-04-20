@@ -14,12 +14,12 @@ module New
   config.i18n.default_locale = :en
    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
     ActionMailer::Base.smtp_settings = {
-  :address      => 'smtp.gmail.com',
-  :domain       => 'gmail.com',
-  :port         =>  587,
-  :user_name      => "mailertodoapp@gmail.com",
-  :password       => "allahuakbar98",
-  :authentication   => 'plain',
+  :address              => 'smtp.gmail.com',
+  :domain               => 'gmail.com',
+  :port                 =>  587,
+  :user_name            => "mailertodoapp@gmail.com",
+  :password             => "allahuakbar98",
+  :authentication       => 'plain',
   :enable_starttls_auto => true
     }
 

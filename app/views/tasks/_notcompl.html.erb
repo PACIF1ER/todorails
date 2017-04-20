@@ -11,9 +11,10 @@
     <thead>
         <tr>
             <th>Check</th>
-            <th><%=sortable "name"%></th>
-            <th><%=sortable "duedate"%></th>
-            <th><%=sortable "priority"%></th>
+            <th  ><%=sortable "name"%></th>
+            <th ><%=sortable "duedate"%></th>
+            <th ><%=sortable "priority"%></th>
+            <th class="col-md-3">Actions</th>
         </tr>
     </thead>
           <%  @tasks.each do |task| %>
