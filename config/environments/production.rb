@@ -85,7 +85,7 @@ Rails.application.configure do
   :domain               => 'gmail.com',
   :port                 =>  587,
   :user_name            => "mailertodoapp@gmail.com",
-  :password             => "allahuakbar98",
+  :password             => "loh",
   :authentication       => 'plain',
   :enable_starttls_auto => true
     }
