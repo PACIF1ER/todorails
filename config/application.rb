@@ -18,7 +18,7 @@ ActionMailer::Base.smtp_settings = {
   :domain               => 'gmail.com',
   :port                 =>  587,
   :user_name            => "mailertodoapp@gmail.com",
-  :password             => "allahuakbar98",
+  :password             => "sosi",
   :authentication       => 'plain',
   :enable_starttls_auto => true
 }
